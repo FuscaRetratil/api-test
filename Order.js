@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const ItemSchema = new mongoose.Schema({
-    productid: {type: Number, required: true},
-    quantify: {type: Number, required: true},
+    productId: {type: Number, required: true},
+    quantity: {type: Number, required: true},
     price: {type: Number, required: true}
 });
 
