@@ -84,3 +84,14 @@ app.put('/order/:orderId', async (req, res) => {
     }
 
 })
+
+app.delete('/order/:orderId', async (req, res) => {
+    try {
+        const { orderId } = req.params;
+        const pedidoDeletado = await Order.findOneAndDelete({ orderId });
+
+        res.status(200).json({ mensagem: `Pedido deletado com sucesso.` });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+})
